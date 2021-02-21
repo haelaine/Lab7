@@ -148,10 +148,8 @@
 
         let url = document.getElementById("endpoint").value;
 
-        document.getElementById("executeButton").addEventListener("click", create);
-        //insert into the array
-        function create() {
-          alert("hello"); 
+        document.getElementById("executeButton").addEventListener("click", function() {
+          alert("hi there"); 
           var author = document.getElementById("author").value; 
           var title = document.getElementById("title").value; 
           fetch(url, {
@@ -179,8 +177,9 @@
             function (error) {
               output.innerHTML = error;          
             });
+            
 
-        }
+        });
       }
 
       // This function should use fetch to update one existing entry in the given endpoint.
