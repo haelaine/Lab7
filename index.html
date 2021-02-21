@@ -199,6 +199,9 @@
         var recordIDContainer = document.getElementById("recordIDcontainer");
         recordIDContainer.style.display = "block"; 
 
+        //document.getElementById("executeButton").addEventListener("click", update);
+
+        //function update() {
         if (value == 'submit') {
           console.log("within the update add event listener"); 
           var author = document.getElementById("author").value; 
@@ -233,9 +236,6 @@
             function (error) {
               output.innerHTML = error;          
             }); 
-            
-            recordForm.style.display = "none"; 
-            recordIDContainer.style.display = "none"; 
         }
         
 
