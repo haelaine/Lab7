@@ -181,8 +181,9 @@
             function (error) {
               output.innerHTML = error;          
             });
+            recordForm.style.display = "none"; 
+
         }
-        recordForm.style.display = "none"; 
       }
 
       // This function should use fetch to update one existing entry in the given endpoint.
@@ -233,9 +234,10 @@
             function (error) {
               output.innerHTML = error;          
             });
+            recordForm.style.display = "none"; 
+          recordIDContainer.style.display = "none"; 
         }
-        recordForm.style.display = "none"; 
-        recordIDContainer.style.display = "none"; 
+        
 
 
       }
