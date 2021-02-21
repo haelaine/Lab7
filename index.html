@@ -151,7 +151,7 @@
         //var title= document.getElementById("title").value; 
         let url = document.getElementById("endpoint").value;
 
-        document.getElementById("executeButton").addEventListener("click", create)
+        document.getElementById("executeButton").addEventListener("click", create);
         //insert into the array
         function create() {
           var author = document.getElementById("author").value; 
@@ -181,7 +181,6 @@
             function (error) {
               output.innerHTML = error;          
             });
-            recordForm.style.display = "none"; 
 
         }
       }
@@ -233,9 +232,7 @@
           .catch(
             function (error) {
               output.innerHTML = error;          
-            });
-            recordForm.style.display = "none"; 
-          recordIDContainer.style.display = "none"; 
+            }); 
         }
         
 
