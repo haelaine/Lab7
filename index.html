@@ -250,8 +250,8 @@
           })
           .then(
             function(response) {
-              if (response.status != 204) {
-                throw new Error(response.status); 
+              if (!response.ok) {
+                throw Error(response.status); 
               }
               response.json().then(function(data) {
                 output.innerHTML = JSON.stringify(data); 
