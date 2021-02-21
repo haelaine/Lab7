@@ -92,25 +92,17 @@
           })
           .then(
             function(response) {
-              // Examine the text in the response
+              if (response.status != 200) {
+                throw new Error(response.status); 
+              }
               response.json().then(function(data) {
                 output.innerHTML = JSON.stringify(data); 
               });
             }
           )
           .catch(function (error) {
-            output.innerHTML = data.stringify(error);
-          });
-
-        /*fetch(url)
-          .then(response => response.json())
-          .then( function(data) {
-            output.innerHTML = JSON.stringify(data)
-          }) 
-          //FIX
-          .catch(function(error) {
             output.innerHTML = error;
-          });*/
+          });
       }
 
       // This function should fetch one entry from the given endpoint.
@@ -127,30 +119,18 @@
           })
           .then(
             function(response) {
-              // Examine the text in the response
+              if (response.status != 200) {
+                throw new Error(response.status); 
+              }
               response.json().then(function(data) {
                 output.innerHTML = JSON.stringify(data); 
               });
             }
           )
-          .catch(function (error) {
-            console.log('Request failed', error);
-            console.log("helo"); 
-            console.log(error); 
+          .catch(
+            function (error) {
+              output.innerHTML = error; 
           });
-
-        /*fetch(url)
-          .then(
-            function(response) {
-              // Examine the text in the response
-              response.json().then(function(data) {
-                output.innerHTML = JSON.stringify(data); 
-              });
-            }
-          )
-          .catch(function(err) {
-            console.log('Fetch Error :-S', err);
-          });*/
 
       }
 
@@ -189,16 +169,18 @@
           })
           .then(
             function(response) {
-              // Examine the text in the response
-              //TODO: make it stay! 
+              if (response.status != 201) {
+                throw Error(response.status); 
+              }
               response.json().then(function(data) {
                 output.innerHTML = JSON.stringify(data); 
               });
             }
           )
-          .catch(function (error) {
-            console.log('Request failed', error);
-          });
+          .catch(
+            function (error) {
+              output.innerHTML = error;          
+            });
         }
       }
 
@@ -237,16 +219,19 @@
           })
           .then(
             function(response) {
-              // Examine the text in the response
-              //TODO: make it stay! 
+              if (response.status != 200) {
+                throw new Error(response.status); 
+              }
+
               response.json().then(function(data) {
                 output.innerHTML = JSON.stringify(data); 
               });
             }
           )
-          .catch(function (error) {
-            console.log('Request failed', error);
-          });
+          .catch(
+            function (error) {
+              output.innerHTML = error;          
+            });
         }
 
       }
@@ -265,16 +250,18 @@
           })
           .then(
             function(response) {
-              // Examine the text in the response
-              //TODO: make it stay! 
+              if (response.status != 204) {
+                throw new Error(response.status); 
+              }
               response.json().then(function(data) {
                 output.innerHTML = JSON.stringify(data); 
               });
             }
           )
-          .catch(function (error) {
-            console.log(error);
-          });
+          .catch(
+            function (error) {
+              output.innerHTML = error;          
+            });
       }
 
       window.addEventListener('DOMContentLoaded', () => {
