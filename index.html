@@ -142,14 +142,14 @@
         // TODO
         //Show the author and title boxes
         let output = document.getElementById("output"); 
-
+        alert("within the createRecord()"); 
         var recordForm = document.getElementById("recordForm");
         recordForm.style.display = "block"; 
 
         let url = document.getElementById("endpoint").value;
 
         document.getElementById("executeButton").addEventListener("click", function() {
-          alert("hi there"); 
+          alert("executeAddEventListener within the createReecord"); 
           var author = document.getElementById("author").value; 
           var title = document.getElementById("title").value; 
           fetch(url, {
@@ -198,6 +198,7 @@
         document.getElementById("executeButton").addEventListener("click", update);
 
         function update() {
+          console.log("within the update add event listener"); 
           var author = document.getElementById("author").value; 
           var title= document.getElementById("title").value; 
           var recordIDValue = document.getElementById("recordID").value;
